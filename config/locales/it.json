@@ -1,0 +1,24 @@
+{
+  "NOTIFICATIONS": {
+    "ADVERTISE": {
+      "TITLE": "Ciao!",
+      "ONE_APPLICANT": "{{who}} si è proposto 🎉"
+    },
+    "BROWSE": {
+      "TITLE": "Ciao!",
+      "VIEWING_ACCEPTED": "{{who}} ha confermato l'apputamento 🎉",
+      "NEED_NEW_DATES": "Chatta con {{who}} per fissare l'appuntamento 😃🎉",
+      "NEW_SUPERSTAR": "{{who}} ti ha mandato una Superstar ⭐",
+      "APPOINTMENT_RESCHEDULED": "{{who}} ha riprogrammato l'appuntamento 📅"
+    }
+  },
+  "CHAT_MESSAGES": {
+    "NEW_CHAT_MESSAGE": "{{who}} ti ha inviato un nuovo messaggio 💬"
+  },
+  "SUBSCRIPTIONS": {
+    "ACTIVATED": "Eccezionale! FLUSTER PLUS è ora disponibile a tua disposizione"
+  },
+  "ITEMS": {
+    "NEW_ITEMS": "Ciao {{who}}, nuove camere e appartamenti corrispondoni alla tuo profilo 🔍👍😃"
+  }
+}

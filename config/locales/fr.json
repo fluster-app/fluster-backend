@@ -1,0 +1,24 @@
+{
+  "NOTIFICATIONS": {
+    "ADVERTISE": {
+      "TITLE": "Félicitations!",
+      "ONE_APPLICANT": "{{who}} a répondu à ton annonce 🎉"
+    },
+    "BROWSE": {
+      "TITLE": "Félicitations!",
+      "VIEWING_ACCEPTED": "{{who}} a accepté ta demande 🎉",
+      "NEED_NEW_DATES": "Chatte avec {{who}} pour fixer le rendez-vous 😃🎉",
+      "NEW_SUPERSTAR": "{{who}} t'a envoyé une Superstar ⭐",
+      "APPOINTMENT_RESCHEDULED": "{{who}} a déplacé le rendez-vous 📅"
+    }
+  },
+  "CHAT_MESSAGES": {
+    "NEW_CHAT_MESSAGE": "{{who}} t'a envoyé un nouveau message 💬"
+  },
+  "SUBSCRIPTIONS": {
+    "ACTIVATED": "Fantastique! Tu disposes dès à présent de FLUSTER PLUS!"
+  },
+  "ITEMS": {
+    "NEW_ITEMS": "Hey {{who}}, des nouvelles annonces correspondent à ton profil 🔍👍😃"
+  }
+}
