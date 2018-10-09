@@ -1,23 +1,23 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-var Item = mongoose.model('Item');
-var CandidatesHelper = require('../controllers/candidates/candidatesHelper');
+const Item = mongoose.model('Item');
+const CandidatesHelper = require('../controllers/candidates/candidatesHelper');
 
-var Device = require('../model/device');
+const Device = require('../model/device');
 
-var logger = require('log4js').getLogger('peterparker');
+const logger = require('log4js').getLogger('peterparker');
 
-var utils = require('../controllers/utils/utils');
+const utils = require('../controllers/utils/utils');
 
-var constants = require('../config/constants');
+const constants = require('../config/constants');
 
-var pushSender = require('./push-sender');
+const pushSender = require('./push-sender');
 
-var i18n = require("i18n");
+const i18n = require("i18n");
 
-var moment = require('moment');
-var Q = require('q');
-var _ = require('underscore');
+const moment = require('moment');
+const Q = require('q');
+const _ = require('underscore');
 
 module.exports = {
     pushNewItems: pushNewItems
@@ -29,12 +29,14 @@ function pushNewItems() {
         return;
     }
 
-    var now = new Date();
-    var sinceYesterday = moment(now).add(-1, 'd').toDate();
+    const now = new Date();
+    const todayAt8am = moment().hours(8).minutes(0).seconds(0).toDate();
 
-    var query = {
+    let sinceWhen = moment(now).isBefore(todayAt8am) ? moment(now).add(-8, 'h').toDate() : moment(now).add(-1, 'h').toDate();
+
+    const query = {
         status: 'published',
-        createdAt: {$gte: sinceYesterday, $lte: now}
+        createdAt: {$gt: sinceWhen, $lte: now}
     };
 
     Item.find(query).lean().exec(function (err, items) {
@@ -42,15 +44,15 @@ function pushNewItems() {
             logger.info('error', 'Error while looking for notifications.');
         } else {
             if (utils.isNotEmpty(items)) {
-                var promises = new Array();
+                const promises = new Array();
 
-                for (var i = 0, len = items.length; i < len; i++) {
+                for (let i = 0, len = items.length; i < len; i++) {
                     promises.push(targetUsersAndSendPushNotification(items[i]));
                 }
 
                 Promise.all(promises).then(function (values) {
 
-                    var uniqueUsers = _.map(_.groupBy(_.flatten(values), function (doc) {
+                    const uniqueUsers = _.map(_.groupBy(_.flatten(values), function (doc) {
                         return doc._id;
                     }), function (grouped) {
                         return grouped[0];
@@ -60,7 +62,7 @@ function pushNewItems() {
 
                         logger.info("Gonna try to send new items push notifications to " + uniqueUsers.length + " users.");
 
-                        for (var i = 0, len = uniqueUsers.length; i < len; i++) {
+                        for (let i = 0, len = uniqueUsers.length; i < len; i++) {
                             sendPushNotification(uniqueUsers[i]);
                         }
                     }
@@ -71,11 +73,11 @@ function pushNewItems() {
 }
 
 function targetUsersAndSendPushNotification(item) {
-    var deferred = Q.defer();
+    const deferred = Q.defer();
 
-    var candidatesHelper = new CandidatesHelper();
+    const candidatesHelper = new CandidatesHelper();
 
-    var query = {
+    let query = {
         longitude: item.address.location.coordinates[0],
         latitude: item.address.location.coordinates[1],
         type: item.attributes.type,
@@ -109,15 +111,15 @@ function targetUsersAndSendPushNotification(item) {
         query["availableend"] = '' + item.attributes.availability.end;
     }
 
-    var likes = _.map(item.likes, function (doc) {
+    let likes = _.map(item.likes, function (doc) {
         return doc.user;
     });
 
-    var dislikes = _.map(item.dislikes, function (doc) {
+    const dislikes = _.map(item.dislikes, function (doc) {
         return doc.user;
     });
 
-    var userIds = new Array();
+    let userIds = new Array();
     userIds.push(item.user);
 
     if (utils.isNotEmpty(likes)) {
@@ -151,7 +153,7 @@ function processNofication(user, device) {
 
     if (utils.isNotNull(user.userParams) && utils.isNotNull(user.userParams.appSettings) && user.userParams.appSettings.pushNotifications) {
 
-        var msgText = getPushNotificationText(user, device);
+        const msgText = getPushNotificationText(user, device);
 
         pushSender.pushNotification(msgText, device).then(function (data) {
             // Coolio all right here
@@ -165,7 +167,7 @@ function processNofication(user, device) {
 
 function getPushNotificationText(user, device) {
 
-    var language = !utils.isStringEmpty(device.language) ? device.language : 'en';
+    const language = !utils.isStringEmpty(device.language) ? device.language : 'en';
 
     return i18n.__({phrase: "ITEMS.NEW_ITEMS", locale: language}, {who: user.facebook.firstName});
 }
