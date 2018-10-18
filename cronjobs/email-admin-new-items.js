@@ -22,7 +22,7 @@ function sendNewItems() {
         return;
     }
 
-    const nowMinus5Minutes = moment(new Date()).add(-5, 'm').toDate();
+    const nowMinus5Minutes = moment(new Date()).add(-2, 'm').toDate();
 
     const query = {
         createdAt: {$gte: nowMinus5Minutes}
