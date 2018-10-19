@@ -1,5 +1,5 @@
-var utils = require('../controllers/utils/utils');
-var constants = require('../config/constants');
+var utils = require('../../controllers/utils/utils');
+var constants = require('../../config/constants');
 
 var Q = require('q');
 

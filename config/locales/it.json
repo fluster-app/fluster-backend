@@ -19,6 +19,7 @@
     "ACTIVATED": "Eccezionale! FLUSTER PLUS è ora disponibile a tua disposizione"
   },
   "ITEMS": {
-    "NEW_ITEMS": "Ciao {{who}}, nuove camere e appartamenti corrispondoni alla tuo profilo 🔍👍😃"
+    "NEW_ITEMS": "Ciao {{who}}, nuove camere e appartamenti corrispondoni alla tuo profilo 🔍👍😃",
+    "NEW_CANDIDATES": "Hey {{who}}, espandi la visibilità del tuo annuncio per raggiungere più candidati"
   }
 }

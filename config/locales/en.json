@@ -19,6 +19,7 @@
 		"ACTIVATED": "Awesome! You upgrade to FLUSTER PLUS is done, enjoy!"
 	},
 	"ITEMS": {
-		"NEW_ITEMS": "Hey {{who}}, some new posts are matching your profile 🔍👍😃"
+		"NEW_ITEMS": "Hey {{who}}, some new posts are matching your profile 🔍👍😃",
+		"NEW_CANDIDATES": "Hey {{who}}, extend the visibility of your ad to reach more candidates"
 	}
 }
