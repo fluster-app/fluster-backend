@@ -1,4 +1,4 @@
-const Device = require('../model/device');
+const Device = require('../../model/device');
 
 const logger = require('log4js').getLogger('peterparker');
 
