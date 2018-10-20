@@ -19,6 +19,7 @@
     "ACTIVATED": "Genial! FLUSTER PLUS steht nun zu deiner Verfügung, viel Spass!"
   },
   "ITEMS": {
-    "NEW_ITEMS": "Hoi {{who}}, einige neue Inserate passen zu deinem Profil 🔍👍😃"
+    "NEW_ITEMS": "Hey {{who}}, einige neue Inserate passen zu deinem Profil 🔍👍😃",
+    "NEW_CANDIDATES": "Hey {{who}}, erweitert die Sichtbarkeit deiner Anzeige, um mehr Kandidaten zu erreichen 😉"
   }
 }

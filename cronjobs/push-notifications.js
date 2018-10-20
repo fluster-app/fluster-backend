@@ -8,7 +8,7 @@ var logger = require('log4js').getLogger('peterparker');
 
 var utils = require('../controllers/utils/utils');
 
-var pushSender = require('./push-sender');
+var pushSender = require('./helpers/push-sender');
 
 var i18n = require("i18n");
 

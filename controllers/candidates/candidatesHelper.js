@@ -7,18 +7,16 @@ const utils = require('../utils/utils');
 
 const queryUtils = require('../utils/query-utils');
 
-const constants = require('../../config/constants');
-
 const Q = require('q');
 
 function CandidatesHelper() {
     this.findCandidates = findCandidates;
 }
 
-function findCandidates(userIds, page, limit, params) {
+function findCandidates(userIds, page, limit, params, lastLoginInDays) {
     let deferred = Q.defer();
 
-    const startLastLogin = moment(new Date()).startOf('day').add(-1 * constants.LIMIT_CANDIDATES, 'd').toDate();
+    const startLastLogin = moment(new Date()).startOf('day').add(-1 * lastLoginInDays, 'd').toDate();
 
     // Prepare the query
     let query = {
