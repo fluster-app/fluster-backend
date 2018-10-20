@@ -43,7 +43,7 @@ const emailAdminNewItemsJob = new cron.CronJob('0 */2 7-23 * * *', function() {
     'Europe/Paris'
 );
 
-const pushNewCandidatesJob = new cron.CronJob('0 0 19 0-6/2 * *', function() {
+const pushNewCandidatesJob = new cron.CronJob('0 0 19 * * 0,2,4', function() {
         pushNewCandidates.pushNewCandidates();
     }, function () {
         /* This function is executed when the job stops */
