@@ -60,7 +60,7 @@ function pushNewCandidates() {
 
                             for (let i = 0, len = values.length; i < len; i++) {
                                 if (values[i].hasCandidates) {
-                                    pushCandidatesHelper.sendPushNotification(values[i], 'ITEMS.NEW_CANDIDATES');
+                                    pushCandidatesHelper.sendPushNotification(values[i].item.user, 'ITEMS.NEW_CANDIDATES');
                                     loggerCount++;
                                 }
                             }
