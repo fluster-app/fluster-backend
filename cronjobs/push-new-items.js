@@ -46,7 +46,7 @@ function pushNewItems() {
                     const ageMin = item.userLimitations.age.min;
                     const ageMax = item.userLimitations.age.max;
 
-                    promises.push(pushCandidatesHelper.findCandidates(item, ageMin, ageMax));
+                    promises.push(pushCandidatesHelper.findCandidates(item, ageMin, ageMax, constants.LIMIT_CANDIDATES));
                 }
 
                 Promise.all(promises).then((values) => {

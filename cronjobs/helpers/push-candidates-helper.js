@@ -19,7 +19,7 @@ module.exports = {
     sendPushNotification: sendPushNotification
 };
 
-function findCandidates(item, ageMin, ageMax) {
+function findCandidates(item, ageMin, ageMax, lastLoginInDays) {
     const deferred = Q.defer();
 
     const candidatesHelper = new CandidatesHelper();
@@ -77,9 +77,9 @@ function findCandidates(item, ageMin, ageMax) {
         userIds = userIds.concat(dislikes);
     }
 
-    candidatesHelper.findCandidates(userIds, 0, constants.MAX_ITEM_USERS, query).then(function (users) {
+    candidatesHelper.findCandidates(userIds, 0, constants.MAX_ITEM_USERS, query, lastLoginInDays).then((users) => {
         deferred.resolve(users);
-    }, function (err) {
+    }, (err) => {
         deferred.reject(new Error(err));
     });
 

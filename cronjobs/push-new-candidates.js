@@ -74,7 +74,7 @@ function hasItemCandidates(item) {
     const ageMin = item.userLimitations.age.min === 18 ? 18 : getFilterAgeMin(item.userLimitations.age.min);
     const ageMax = item.userLimitations.age.max === 99 ? 99 : getFilterAgeMax(item.userLimitations.age.max);
 
-    pushCandidatesHelper.findCandidates(item, ageMin, ageMax).then((users) => {
+    pushCandidatesHelper.findCandidates(item, ageMin, ageMax, constants.LIMIT_RECENT_CANDIDATES).then((users) => {
         deferred.resolve({
             item: item,
             hasCandidates: utils.isNotEmpty(users)

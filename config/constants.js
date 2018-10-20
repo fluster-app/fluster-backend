@@ -16,6 +16,7 @@ define("DEFAULT_DISTANCE", 99);
 
 // Discover roommates
 define("LIMIT_CANDIDATES", 40); // Find only roommates active in the last x days
+define("LIMIT_RECENT_CANDIDATES", 2);
 define("LIMIT_TARGETED_USERS", 60);
 
 // Item

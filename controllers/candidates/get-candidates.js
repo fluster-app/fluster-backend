@@ -1,32 +1,32 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-var CandidatesHelper = require('./candidatesHelper');
+const CandidatesHelper = require('./candidatesHelper');
 
-var utils = require('../utils/utils');
+const utils = require('../utils/utils');
 
-var constants = require('../../config/constants');
+const constants = require('../../config/constants');
 
-module.exports.getCandidates = function (req, res, next) {
-    var userId = req.params.userId || req.body.userId || req.query.userId || null;
+module.exports.getCandidates = (req, res, next) => {
+    const userId = req.params.userId || req.body.userId || req.query.userId || null;
 
-    var userIds = new Array();
+    const userIds = new Array();
     userIds.push(new mongoose.Types.ObjectId(userId));
 
-    var limit = constants.LIMIT_QUERY;
-    var page = null;
+    const limit = constants.LIMIT_QUERY;
+    let page = null;
     if (!utils.isStringEmpty(req.query.pageIndex)) {
         page = parseInt(req.query.pageIndex) * limit;
     }
 
-    var candidatesHelper = new CandidatesHelper();
+    const candidatesHelper = new CandidatesHelper();
 
-    candidatesHelper.findCandidates(userIds, page, limit, req.query).then(function (users) {
+    candidatesHelper.findCandidates(userIds, page, limit, req.query, constants.LIMIT_CANDIDATES).then((users) => {
         res.format({
-            json: function () {
+            json: () => {
                 res.json(users);
             }
         });
-    }, function (err) {
+    }, (err) => {
         res.status(500).json({
             error: "Get users error:" + err
         });
