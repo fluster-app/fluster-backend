@@ -44,7 +44,7 @@ function pushNewCandidates() {
                 const promises = new Array();
 
                 for (let i = 0, len = items.length; i < len; i++) {
-                    if (hasItemNoLimitations(items[i])) {
+                    if (!hasItemNoLimitations(items[i])) {
                         promises.push(hasItemCandidates(items[i]));
                     }
                 }
