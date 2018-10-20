@@ -14,6 +14,8 @@ const i18n = require("i18n");
 
 const Q = require('q');
 
+const _ = require('underscore');
+
 module.exports = {
     findCandidates: findCandidates,
     sendPushNotification: sendPushNotification
