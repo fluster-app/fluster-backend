@@ -50,13 +50,22 @@ function pushNewCandidates() {
                 }
 
                 if (utils.isNotEmpty(promises)) {
+
+                    logger.info("Gonna search candidates for " + promises.length + " items.");
+
                     Promise.all(promises).then((values) => {
                         if (utils.isNotEmpty(values)) {
+
+                            let loggerCount = 0;
+
                             for (let i = 0, len = values.length; i < len; i++) {
                                 if (values[i].hasCandidates) {
                                     pushCandidatesHelper.sendPushNotification(values[i], 'ITEMS.NEW_CANDIDATES');
+                                    loggerCount++;
                                 }
                             }
+
+                            logger.info("For " + loggerCount + " items we found potential candidates.");
                         }
                     })
                     .catch((err) => {
