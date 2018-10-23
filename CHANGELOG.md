@@ -3,7 +3,7 @@
 
 ### Features
 
-* add item visibility in public route answer ([4a4ee56ead309244498b7c9aa1c43ae90aafc384](https://github.com/fluster/fluster-backend/commit/4a4ee56ead309244498b7c9aa1c43ae90aafc384))
+* add items visibility on the website ([4a4ee56ead309244498b7c9aa1c43ae90aafc384](https://github.com/fluster/fluster-backend/commit/4a4ee56ead309244498b7c9aa1c43ae90aafc384), [6a08b38bb2cacf579ebc63ce8fd2fdbdedcc39e2](https://github.com/fluster/fluster-backend/commit/6a08b38bb2cacf579ebc63ce8fd2fdbdedcc39e2))
 
 <a name="3.1.0"></a>
 # [3.1.0](https://github.com/fluster/fluster-backend/compare/v3.0.1...v3.1.0) (2018-10-20)
