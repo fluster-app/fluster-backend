@@ -16,7 +16,7 @@ module.exports.getItem = function (req, res, next) {
     subQuery.push({"status": "cancelled"});
     query["$or"] = subQuery;
 
-    const includeFields = "hashId title mainPhoto source attributes.type attributes.price attributes.rooms attributes.size attributes.sharedRooms attributes.availability.begin attributes.availability.end address.location address.district address.city address.country itemDetail.otherPhotos";
+    const includeFields = "hashId title mainPhoto source attributes.type attributes.price attributes.rooms attributes.size attributes.sharedRooms attributes.availability.begin attributes.availability.end address.location address.district address.city address.country itemDetail.otherPhotos userLimitations";
 
     Item.findOne(query).lean().select(includeFields).populate(populateFields).exec(function (err, filteredItem) {
         if (err) {
