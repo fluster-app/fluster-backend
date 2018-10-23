@@ -47,7 +47,7 @@ module.exports.getHighlights = function (req, res, next) {
     subQuery.push({"status": "cancelled"});
     match["$or"] = subQuery;
 
-    const includeFields = {hashId: true, mainPhoto: true, source: true, itemDetail: true, "attributes.type": true, "attributes.price": true, "attributes.rooms": true, "attributes.size": true, "attributes.sharedRooms": true, "attributes.availability.begin": true, "attributes.availability.end": true, "address.location": true, "address.district": true, "address.city": true, "address.country": true,};
+    const includeFields = {hashId: true, mainPhoto: true, source: true, itemDetail: true, "attributes.type": true, "attributes.price": true, "attributes.rooms": true, "attributes.size": true, "attributes.sharedRooms": true, "attributes.availability.begin": true, "attributes.availability.end": true, "address.location": true, "address.district": true, "address.city": true, "address.country": true, "userLimitations": true};
 
     Item.aggregate([{$match: match}, {$sample: {size: 3}}, {$sort: {createdAt: -1}}, {$project: includeFields}], function (err, items) {
         if (err) {
