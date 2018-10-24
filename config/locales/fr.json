@@ -21,5 +21,9 @@
   "ITEMS": {
     "NEW_ITEMS": "Hey {{who}}, des nouvelles annonces correspondent à ton profil 🔍👍😃",
     "NEW_CANDIDATES": "Hey {{who}}, étends la visibilité de ton annonce pour atteindre plus de candidats 😉"
+  },
+  "REMINDER": {
+    "TODAY_APPOINTMENT": "Hey {{who}}, cool tu as une visite aujourd'hui ⏰😃",
+    "TODAY_APPOINTMENTS": "Hey {{who}}, cool tu as des visites aujourd'hui ⏰😃"
   }
 }

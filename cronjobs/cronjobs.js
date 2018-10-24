@@ -4,6 +4,7 @@ const pushNotifications = require('./push-notifications');
 const pushChatMessages = require('./push-chat-messages');
 const pushNewItems = require('./push-new-items');
 const pushNewCandidates = require('./push-new-candidates');
+const pushAppointmentsReminder = require('./push-appointments-reminder');
 
 const emailAdminNewItems = require('./email-admin-new-items');
 
@@ -45,6 +46,15 @@ const emailAdminNewItemsJob = new cron.CronJob('0 */2 7-23 * * *', function() {
 
 const pushNewCandidatesJob = new cron.CronJob('0 0 19 * * 0,2,4', function() {
         pushNewCandidates.pushNewCandidates();
+    }, function () {
+        /* This function is executed when the job stops */
+    },
+    true, /* Start the job right now */
+    'Europe/Paris'
+);
+
+const pushAppointmentsReminderJob = new cron.CronJob('0 56 7 * * *', function() {
+        pushAppointmentsReminder.pushReminder();
     }, function () {
         /* This function is executed when the job stops */
     },

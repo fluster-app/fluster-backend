@@ -10,6 +10,8 @@ const constants = require('../config/constants');
 
 const pushCandidatesHelper = require('./helpers/push-candidates-helper');
 
+const pushUsersHelper = require('./helpers/push-users-helper');
+
 const moment = require('moment');
 const Q = require('q');
 
@@ -60,7 +62,7 @@ function pushNewCandidates() {
 
                             for (let i = 0, len = values.length; i < len; i++) {
                                 if (values[i].hasCandidates) {
-                                    pushCandidatesHelper.sendPushNotification(values[i].item.user, 'ITEMS.NEW_CANDIDATES');
+                                    pushUsersHelper.sendPushNotification(values[i].item.user, 'ITEMS.NEW_CANDIDATES');
                                     loggerCount++;
                                 }
                             }

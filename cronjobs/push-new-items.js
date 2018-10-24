@@ -10,6 +10,8 @@ const constants = require('../config/constants');
 
 const pushCandidatesHelper = require('./helpers/push-candidates-helper');
 
+const pushUsersHelper = require('./helpers/push-users-helper');
+
 const moment = require('moment');
 const _ = require('underscore');
 
@@ -62,7 +64,7 @@ function pushNewItems() {
                         logger.info("Gonna try to send new items push notifications to " + uniqueUsers.length + " users.");
 
                         for (let i = 0, len = uniqueUsers.length; i < len; i++) {
-                            pushCandidatesHelper.sendPushNotification(uniqueUsers[i], 'ITEMS.NEW_ITEMS');
+                            pushUsersHelper.sendPushNotification(uniqueUsers[i], 'ITEMS.NEW_ITEMS');
                         }
                     }
                 })
