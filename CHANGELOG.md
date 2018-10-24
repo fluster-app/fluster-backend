@@ -1,3 +1,10 @@
+<a name="3.2.0"></a>
+# [3.2.0](https://github.com/fluster/fluster-backend/compare/v3.1.1...v3.2.0) (2018-10-24)
+
+### Features
+
+* reminder (push notification) in case of today's viewing(s) ([#4](https://github.com/fluster/fluster-backend/issues/4))
+
 <a name="3.1.1"></a>
 # [3.1.1](https://github.com/fluster/fluster-backend/compare/v3.1.0...v3.1.1) (2018-10-23)
 
