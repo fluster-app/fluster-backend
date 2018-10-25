@@ -1,3 +1,14 @@
+<a name="3.2.1"></a>
+# [3.2.1](https://github.com/fluster/fluster-backend/compare/v3.2.0...v3.2.1) (2018-10-25)
+
+### Features
+
+* return user status for chat display ([#5](https://github.com/fluster/fluster-backend/issues/5))
+
+### Lib
+
+* update last mongoose and aws-sdk
+
 <a name="3.2.0"></a>
 # [3.2.0](https://github.com/fluster/fluster-backend/compare/v3.1.1...v3.2.0) (2018-10-24)
 
