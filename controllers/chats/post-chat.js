@@ -1,29 +1,28 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-var Chat = mongoose.model('Chat');
-var User = mongoose.model('User');
+const Chat = mongoose.model('Chat');
 
 module.exports.postChat = function (req, res, next) {
 
-    var chat = req.body.chat;
+    const chat = req.body.chat;
 
-    var populateFields = new Array();
-    populateFields.push({path: "userItem", select: "_id google.id facebook.id facebook.firstName", options: {lean: true}}, {path: "userApplicant", select: "_id facebook.id google.id facebook.firstName", options: {lean: true}});
+    let populateFields = new Array();
+    populateFields.push({path: "userItem", select: "_id google.id facebook.id facebook.firstName status", options: {lean: true}}, {path: "userApplicant", select: "_id facebook.id google.id facebook.firstName status", options: {lean: true}});
 
-    Chat.create(chat, function (err, createdChat) {
+    Chat.create(chat, (err, createdChat) => {
         if (err) {
             res.status(500).json({
                 error: "There was a problem adding the chat into the database."
             });
         } else {
-            Chat.findOne({_id: createdChat._id}).lean().populate(populateFields).exec(function(err, populatedChat) {
+            Chat.findOne({_id: createdChat._id}).lean().populate(populateFields).exec((err, populatedChat) => {
                 if (err) {
                     res.status(500).json({
                         error: "There was a problem getting the chat from the database."
                     });
                 } else {
                     res.format({
-                        json: function(){
+                        json: () => {
                             res.json(populatedChat);
                         }
                     });
