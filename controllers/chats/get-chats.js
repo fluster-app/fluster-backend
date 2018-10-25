@@ -30,7 +30,7 @@ module.exports.getChats = function (req, res, next) {
     query["$or"] = subQuery;
 
     var populateFields = new Array();
-    populateFields.push({path: "userItem", select: "_id google.id facebook.id facebook.firstName", options: {lean: true}}, {path: "userApplicant", select: "_id facebook.id google.id facebook.firstName", options: {lean: true}});
+    populateFields.push({path: "userItem", select: "_id google.id facebook.id facebook.firstName status", options: {lean: true}}, {path: "userApplicant", select: "_id facebook.id google.id facebook.firstName status", options: {lean: true}});
 
     Chat.find(query).lean().sort({createdAt: -1}).limit(limit).skip(page).populate(populateFields).exec(function (err, chats) {
         if (err) {
