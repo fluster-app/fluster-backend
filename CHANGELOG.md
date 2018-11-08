@@ -1,3 +1,10 @@
+<a name="3.2.2"></a>
+# [3.2.2](https://github.com/fluster/fluster-backend/compare/v3.2.1...v3.2.2) (2018-11-08)
+
+### Lib
+
+* update last mongoose, aws-sdk, google-auth-library and cron
+
 <a name="3.2.1"></a>
 # [3.2.1](https://github.com/fluster/fluster-backend/compare/v3.2.0...v3.2.1) (2018-10-25)
 
