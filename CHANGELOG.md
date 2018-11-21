@@ -1,5 +1,9 @@
-<a name="3.2.3"></a>
-# [3.2.3](https://github.com/fluster/fluster-backend/compare/v3.2.2...v3.2.3) (2018-11-21)
+<a name="3.3.0"></a>
+# [3.3.0](https://github.com/fluster/fluster-backend/compare/v3.2.2...v3.3.0) (2018-11-21)
+
+### Feature
+
+* when item's end is updated, return the updated documented (related to [fluster-app-#54](https://github.com/fluster/fluster-app/issues/54))
 
 ### Lib
 
