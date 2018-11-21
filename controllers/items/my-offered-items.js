@@ -71,7 +71,7 @@ module.exports.setEnd = function (req, res, next) {
         updatedAt: Date.now()
     };
 
-    Item.findByIdAndUpdate(req.params.id, updateQuery, {new: false}).lean().populate(populateFields).exec(function (err, item) {
+    Item.findByIdAndUpdate(req.params.id, updateQuery, {new: true}).lean().populate(populateFields).exec(function (err, item) {
         if (err) {
             res.status(500).json({
                 error: "There was a problem change the end date of the item in the database: " + err
