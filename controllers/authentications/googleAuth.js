@@ -137,7 +137,7 @@ function handleValidToken(userId, googleAccessToken) {
 
     let deferred = Q.defer();
 
-    const url = 'https://people.googleapis.com/v1/people/' + userId + '?personFields=names,photos,locales,genders,birthdays&access_token=' + googleAccessToken;
+    const url = 'https://people.googleapis.com/v1/people/' + userId + '?personFields=names,photos,locales,genders&access_token=' + googleAccessToken;
 
     request.get(url, function(error, response, body) {
         if (!error && response.statusCode === 200) {
