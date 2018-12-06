@@ -5,10 +5,10 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "aws-sdk": "^2.360.0",
+    "aws-sdk": "^2.371.0",
     "body-parser": "^1.18.3",
     "cookie-parser": "~1.4.3",
-    "cron": "^1.5.0",
+    "cron": "^1.5.1",
     "debug": "^4.1.0",
     "express": "^4.16.4",
     "fs": "~0.0.2",
@@ -19,12 +19,12 @@
     "log4js": "^3.0.6",
     "method-override": "^3.0.0",
     "moment": "^2.22.2",
-    "mongoose": "^5.3.13",
+    "mongoose": "^5.3.15",
     "morgan": "^1.9.1",
     "nodemailer": "^4.7.0",
     "q": "^1.5.1",
     "request": "^2.88.0",
-    "socket.io": "^2.1.1",
+    "socket.io": "^2.2.0",
     "stylus": "~0.54.5",
     "underscore": "^1.9.1"
   },
