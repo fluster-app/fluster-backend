@@ -1,3 +1,14 @@
+<a name="3.4.0"></a>
+# [3.4.0](https://github.com/fluster/fluster-backend/compare/v3.3.0...v3.4.0) (2018-12-07)
+
+### Feature
+
+* Google login: remove scope birthday ([#7](https://github.com/fluster/fluster-backend/issues/7))
+
+### Lib
+
+* update all actual libs
+
 <a name="3.3.0"></a>
 # [3.3.0](https://github.com/fluster/fluster-backend/compare/v3.2.2...v3.3.0) (2018-11-21)
 
