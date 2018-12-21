@@ -1,6 +1,6 @@
 const gulp = require('gulp');
 
-const peterparker = '/Users/daviddalbusco/Documents/projects/peterparker';
+const peterparker = '/Users/daviddalbusco/Documents/projects/fluster/peterparker';
 
 // Copy db config
 
