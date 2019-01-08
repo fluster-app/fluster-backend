@@ -18,7 +18,7 @@ gulp.task('prod', () => {
 
 // Copy config and resources
 
-gulp.task('resources', () => {
+gulp.task('resources', (done) => {
     gulp.src(peterparker + '/config/amazon.js')
         .pipe(gulp.dest('./config/'));
 
