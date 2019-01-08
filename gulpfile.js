@@ -27,4 +27,6 @@ gulp.task('resources', () => {
 
     gulp.src(peterparker + '/config/parser.js')
         .pipe(gulp.dest('./config/'));
+
+    done();
 });
