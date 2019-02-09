@@ -1,3 +1,10 @@
+<a name="3.4.2"></a>
+# [3.4.2](https://github.com/fluster/fluster-backend/compare/v3.4.1...v3.4.2) (2019-02-09)
+
+### Lib
+
+* update all actual libs
+
 <a name="3.4.1"></a>
 # [3.4.1](https://github.com/fluster/fluster-backend/compare/v3.4.0...v3.4.1) (2019-01-24)
 
